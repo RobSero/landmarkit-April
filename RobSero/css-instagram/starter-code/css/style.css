@@ -1,0 +1,215 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+
+body, input {
+  font-family: 'Karla', sans-serif;
+}
+
+::placeholder {
+  color: rgb(219, 219, 219);
+}
+
+.page-container {
+  background: #fafafa;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-content: center;
+}
+
+
+/* ------------------------ Left Side Image Styling --------------------- */
+.image-side {
+  margin: 20px;
+  align-self: center;
+}
+
+
+/* ------------------------ Right Side Form Styling --------------------- */
+.form-side {
+ 
+text-align: center;
+  max-width: 350px;
+  margin: 20px;
+  padding: 15px;
+}
+
+.form-section {
+  color: #999;
+  background-color: white;
+  border: solid #e6e6e6 1px ;
+  padding: 15px;
+}
+
+.form-section img {
+  margin-top: 15px;
+}
+
+.form-section h3 {
+  margin: 2%;
+}
+
+.form-side button {
+  background-color: #3897f0;
+  color: white;
+  width: 85%;
+  height: 30px;
+  font-weight: 700;
+  font-size: 0.8em;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.form-side i {
+  margin-right: 10px;
+}
+
+.form-section .or-symbol {
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 15px;
+}
+
+.form-section form {
+  width: 100%;
+  text-align: center;
+  padding: 0;
+}
+
+.form-section input {
+  display: block;
+  width: 85%;
+  height: 30px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  border: 1px solid silver;
+  margin: 4px auto
+
+}
+
+.form-side .login-section {
+  margin-top: 10px;
+  background-color: white;
+  border: solid #e6e6e6 1px ;
+}
+
+.form-side p {
+  margin: 30px
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.login-section a {
+  text-decoration: none;
+  color: #3897f0;
+}
+
+
+/* ------------------------ Footer Styling --------------------- */
+
+footer {
+  width: 100vw;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #fafafa;
+}
+
+footer nav {
+  
+  text-align: center;
+  padding: 0;
+}
+
+footer nav li {
+  display: inline-block;
+  text-transform: uppercase;
+  margin: 5px;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+footer nav ul {
+  padding: 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: #2c465e;
+}
+
+footer p {
+  color: #999;
+  margin-right: 50px;
+}
+
+/* ------------------------ Media CSS 600px --------------------- */
+
+
+@media only screen and (max-width:800px){
+
+  .image-side {
+    display: none;
+  }
+
+  footer {
+    flex-direction: column;
+    align-content: center;
+    margin: auto;
+    text-align: center;
+  }
+
+  footer nav ul {
+    justify-content: center;
+  }
+
+  footer nav {
+    max-width: 350px; 
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  footer p {
+    color: #999;
+    margin-right: 0;
+    padding: 0;
+  }
+}
+
+
+
+
+/* ------------------------ Media CSS 450px --------------------- */
+
+@media only screen and (max-width:450px){
+
+  .form-side, .page-container {
+    padding: 0;
+  }
+
+.form-section, .login-section {
+  border: none;
+  background: #fafafa;
+  padding-top: 0;
+}
+
+footer nav  {
+  margin: 0;
+  padding: 0
+}
+
+footer p {
+  padding: 0;
+  margin-bottom: 15px
+}
+}
