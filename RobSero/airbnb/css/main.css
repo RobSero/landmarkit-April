@@ -1,0 +1,331 @@
+
+body {
+  text-decoration: none;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+button {
+  background-color: #ff5358;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 50px;
+  margin-top: 15px;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(139, 29, 29);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ----------------------------- HEADER STYING ----------------------- */
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgb(235, 235, 235);
+}
+
+nav li {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+header img {
+  width: 8vw;
+  padding-left: 20px;
+}
+
+/* ----------------------------- MAIN SECTION STYING ----------------------- */
+
+.main-image-section {
+  text-align: center;
+  background: linear-gradient(
+    rgba(63, 63, 63, 0.45), 
+    rgba(63, 63, 63, 0.45)
+  ),
+  url('/images/melbourne.jpg');
+  background-size: cover;
+  color: white;
+}
+
+.title-section {
+  padding: 170px;
+}
+
+.title-section h1 {
+  font-size: 5em;
+  margin: 0;
+}
+
+.title-section h4 {
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* ----------------------------- REVIEWS SECTION STYING ----------------------- */
+
+.reviews-section {
+  background-color: #efefef;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.review-cards {
+  width: 45vw;
+  border: 1px solid rgb(172, 172, 172);
+  margin: 25px;
+  background-color: white;
+}
+
+.review-card-header {
+  background-color: #efefef;
+  margin: 0;
+  padding: 1px 25px;
+  font-size: 1.2em;
+}
+
+.review-card-body {
+  display: flex;
+  padding: 20px;
+  align-content: center;
+}
+
+.review-card-body img {
+  width: 200px
+}
+
+.review-card-body p {
+  display: inline;
+  flex-grow: 1;
+
+}
+
+/* ----------------------------- FEATURED SECTION STYING ----------------------- */
+
+.featured-locations-section {
+  text-align: center;
+}
+
+.featured-locations-section h2 {
+  font-size: 2.5em;
+  margin: 20px auto 0px;
+}
+
+.featured-locations-section h5 {
+  margin: 5px auto 40px;
+}
+
+
+.cards-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 30%;
+  background-color: #efefef;
+  border: 1px solid grey;
+}
+
+.card-image {
+  padding: 120px 10px;
+  color: white;
+}
+
+.card-image:hover {
+  cursor: pointer;
+text-decoration: underline;
+box-shadow: 0 2px 10px rgb(44, 36, 36);
+}
+
+.card-image h4 {
+  font-size: 30px;
+  margin: 5px;
+}
+
+#card1 {
+  background: linear-gradient(
+    rgba(63, 63, 63, 0.45), 
+    rgba(63, 63, 63, 0.45)
+  ),
+  url('/images/fitzroy.jpg');
+  background-size: cover;
+}
+
+#card2 {
+  background: linear-gradient(
+    rgba(63, 63, 63, 0.45), 
+    rgba(63, 63, 63, 0.45)
+  ),
+  url('/images/st-kilda.jpg');
+  background-size: cover;
+}
+
+#card3 {
+  background: linear-gradient(
+    rgba(63, 63, 63, 0.45), 
+    rgba(63, 63, 63, 0.45)
+  ),
+  url('/images/central-business-district.jpg');
+  background-size: cover;
+}
+
+.info-card-body {
+  text-align: left;
+}
+
+.info-card-body p {
+  margin: 0;
+  padding: 20px 20px 50px;
+}
+
+
+/* ----------------------------- SEARCH SECTION STYING ----------------------- */
+
+.search-section {
+  text-align: center;
+  padding: 30px;
+}
+
+/* ----------------------------- FOOTER SECTION STYING ----------------------- */
+
+footer {
+  text-align: center;
+  color: white;
+  background-color: #2B2D2E;
+  padding: 30px;
+}
+
+
+/* ----------------------------- IPAD WIDTH STYLING ----------------------- */
+
+
+@media only screen and (max-width: 800px) {
+
+.main-image-section h4 {
+  width: 80%;
+}
+
+  .review-cards {
+    width: 90vw;
+    margin: 25px;
+    }
+
+    .reviews-section {
+    flex-direction: column;
+    }
+
+    .card-image {
+      padding: 20px 5px;
+      height: 50%;
+    }
+
+    .card-image h4 {
+      padding-top: 20px;
+    }
+
+    .info-card-body p {
+      margin: 0;
+      padding: 20px;
+    }
+}
+
+
+/* ----------------------------- MOBILE WIDTH STYLING ----------------------- */
+
+
+
+@media only screen and (max-width: 400px) { 
+
+ header {
+   flex-direction: column;
+ }
+
+  header img {
+    width: 30vw;
+    padding: 10px;
+    margin: 0;
+  }
+
+  nav ul  {
+    margin: 5px auto;
+  }
+
+  .title-section {
+    padding: 50px;
+  }
+  
+  .title-section h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+  
+  .title-section h4 {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 0.8em;
+  }
+
+  .reviews-section {
+    align-content: center;
+  }
+
+  .review-card-header {
+    text-align: center;
+    padding: 5px;
+  }
+
+  .review-card-header h5 {
+    margin: 10px;
+  }
+
+  .review-card-body {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .review-card-body img {
+    width: 50px;
+    margin: 0 auto;
+  }
+
+
+  .featured-locations-section h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+
+  .featured-locations-section h5 {
+    padding: 5px 20px;
+    margin: 0 5px;
+  }
+
+  .cards-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+  }
+  
+  .card {
+    width: 90%;
+    background-color: #efefef;
+    border: 1px solid grey;
+    margin: 10px;
+  }
+
+}
