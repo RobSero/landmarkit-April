@@ -54,7 +54,7 @@ header img {
     rgba(63, 63, 63, 0.45), 
     rgba(63, 63, 63, 0.45)
   ),
-  url('/images/melbourne.jpg');
+  url('../images/melbourne.jpg');
   background-size: cover;
   color: white;
 }
@@ -161,7 +161,7 @@ box-shadow: 0 2px 10px rgb(44, 36, 36);
     rgba(63, 63, 63, 0.45), 
     rgba(63, 63, 63, 0.45)
   ),
-  url('/images/fitzroy.jpg');
+  url('../images/fitzroy.jpg');
   background-size: cover;
 }
 
@@ -170,7 +170,7 @@ box-shadow: 0 2px 10px rgb(44, 36, 36);
     rgba(63, 63, 63, 0.45), 
     rgba(63, 63, 63, 0.45)
   ),
-  url('/images/st-kilda.jpg');
+  url('../images/st-kilda.jpg');
   background-size: cover;
 }
 
@@ -179,7 +179,7 @@ box-shadow: 0 2px 10px rgb(44, 36, 36);
     rgba(63, 63, 63, 0.45), 
     rgba(63, 63, 63, 0.45)
   ),
-  url('/images/central-business-district.jpg');
+  url('../images/central-business-district.jpg');
   background-size: cover;
 }
 
