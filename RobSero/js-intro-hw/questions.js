@@ -49,7 +49,7 @@ console.log(stringNum)
 
 // ? BONUS : console.log a random number from the last variable 
 
-console.log(Math.floor(Math.random() * parseInt(stringNum)))
+console.log(stringNum[Math.floor((Math.random() * stringNum.length))] )   
   
 // ? console.log the remainder of 20 divided by 3 
 //! hint: google the modulus operator 
