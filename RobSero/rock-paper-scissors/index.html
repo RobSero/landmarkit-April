@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/app.js" charset="utf-8"></script>
+  </head>
+  <body>
+<section class="title">
+  <h1>Rock Paper Scissor</h1>
+</section>
+    
+
+    <!-------------------------- PLAYER AREA ------------------------------->
+  <section class="player-area">
+    <div class="playerOne">
+      <h3>Player One</h3>
+      <div class="symbol-section">
+        <div class="symbol rock" id="rock"></div>
+        <div class="symbol paper" id="paper"></div>
+        <div class="symbol scissor" id="scissors"></div>
+      </div>
+      
+    </div>
+    <div class="playerTwo">
+      <h3>Player Two</h3>
+      <div class="symbol-section">
+        <div class="symbol-p2 rock" id="rock"></div>
+        <div class="symbol-p2 paper" id="paper"></div>
+        <div class="symbol-p2 scissor" id="scissors"></div>
+      </div>
+    </div>
+  </section>
+
+      <!-------------------------- GAME AREA ------------------------------->
+
+  <section class="game-area">
+    <div class="playerOneSide">
+      <div class="main-symbol" id="playerOneIcon"></div>
+    </div>
+    <div class="center">
+      <p class="countdown" id="countdown"></p>
+    </div>
+    <div class="playerTwoSide">
+      <div class="main-symbol" id="playerTwoIcon"></div>     
+    </div>
+  </section>
+  <section class="winner-section">
+    <button class="reset-button" id="resetBut">Reset Game</button>
+    <h1 id="winner"></h1>
+    
+  </section>
+  </body>
+</html>

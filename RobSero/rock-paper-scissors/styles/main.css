@@ -1,0 +1,95 @@
+/* -------------------------- PLAYER SECTION ---------------------------- */
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: beige;
+}
+
+.title {
+  text-align: center;
+}
+
+.player-area {
+  background-image: url('https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Minimalist-Crumpled-Paper-Simple-Background-Image.jpg');
+  justify-content: space-between;
+  display: flex;
+  width: 100vw;
+}
+
+.playerTwo {
+text-align: right;
+margin-right: 40px;
+}
+.symbol-section {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.symbol {
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  opacity: 0.4;
+}
+
+.rock {
+  background-image: url('https://lh3.googleusercontent.com/proxy/jcuG2cVq09ad8GVOKwpfc_6n5Kd4eKh1lrCrUz4mVvc9Nq76kXq68DvyURW3s-sqAoaxjI3HduMMzzJRXLpqxWtOgLrLzYYe3yWMgMNaEpXV_UE1cDBVjHWwGXUXevafKKKF-gjN07Bf0VRAtDvMoeorpadRK_slgT4');
+}
+
+.paper {
+  background-image: url('https://www3.bostonglobe.com//rw/Boston/2011-2020/WebGraphics/Metro/BostonGlobe.com/2018/05/rockpaperscissors/assets/paper--left.png');
+}
+
+.scissor {
+  background-image: url('https://www3.bostonglobe.com//rw/Boston/2011-2020/WebGraphics/Metro/BostonGlobe.com/2018/05/rockpaperscissors/assets/scissors--left.png');
+}
+
+.symbol:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.symbol-p2 {
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  opacity: 0.4;
+}
+
+/* -------------------------- MAIN GAME SECTION ---------------------------- */
+
+.game-area {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+  height: 200px;
+}
+
+.main-symbol {
+  height:200px;
+  width: 400px;
+  background-image: url('https://lh3.googleusercontent.com/proxy/jcuG2cVq09ad8GVOKwpfc_6n5Kd4eKh1lrCrUz4mVvc9Nq76kXq68DvyURW3s-sqAoaxjI3HduMMzzJRXLpqxWtOgLrLzYYe3yWMgMNaEpXV_UE1cDBVjHWwGXUXevafKKKF-gjN07Bf0VRAtDvMoeorpadRK_slgT4');
+  background-size: cover;
+}
+
+.countdown {
+  font-size: 100px;
+  visibility: hidden;
+}
+
+.playerOneSide, .playerTwoSide {
+  visibility: hidden;
+}
+
+.winner-section {
+  text-align: center;
+  font-size: 40px;
+}
+
+.reset-button {
+  border: 3px solid green;
+  padding: 10px 30px;
+  border-radius: 15px;
+  background-color: aqua;
+  font-size: 20px;
+  visibility: hidden;
+}
