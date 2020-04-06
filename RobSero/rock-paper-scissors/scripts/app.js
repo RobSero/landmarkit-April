@@ -10,33 +10,47 @@ function init(){
 
   let playerOneChoice
   let playerTwoChoice
-
   let isPlaying = true
 
+
+  // ------------------------------------ RUNS WHEN PLAYER CLICKS AN ICON --------------------------------- //
+
+
+  function playerClicked(event) {
+    if (isPlaying){
+      isPlaying = false
+      countdown.style.visibility = 'visible'
+      countdown.textContent = 3
+      const timer = setInterval(updateCountdown, 1000)
+  
+      updatePlayerOneSection(event.target.id)
+  
+      updatePlayerTwoSection()
+  
+      setTimeout(battle, 3000)
+  
+      setTimeout(() => {
+        clearInterval(timer)
+      },4000)
+    }
+     
+  }
+
+
+  // ------------------------------------ COUNTDOWN CLOCK --------------------------------- //
+
+
   function updateCountdown(){
-    if (countdown.textContent > 0) {
+    if (countdown.textContent > 1) {
       countdown.textContent -= 1
     } else {
       countdown.style.visibility = 'hidden'
     }
   }
 
-  function battle(){
-    winnerText.style.visibility = 'visible'
-    playerOneIcon.style.visibility = 'visible'
-    playerTwoIcon.style.visibility = 'visible'
-    if (playerOneChoice === playerTwoChoice){
-      winnerText.innerHTML = 'TIE GAME'
-      body.style.backgroundColor = 'rgb(223, 216, 124)'
-    } else if ((playerOneChoice === 1 && playerTwoChoice === 2) || (playerOneChoice === 2 && playerTwoChoice === 3) || (playerOneChoice === 3 && playerTwoChoice === 2)) {
-      winnerText.innerHTML = 'PLAYER TWO WINS'
-      body.style.backgroundColor = 'rgb(192, 141, 141)'
-    } else {
-      winnerText.innerHTML = 'PLAYER ONE WINS'
-      body.style.backgroundColor = 'rgb(139, 221, 136)'
-    }
-    reset.style.visibility = 'visible'
-  }
+  // ------------------------------------ RANDOMLY CHANGES PLAYER TWO SECTION --------------------------------- //
+
+ 
 
   function updatePlayerTwoSection() {
     const num = Math.ceil(Math.random() * 3)
@@ -58,6 +72,8 @@ function init(){
     }
   }
 
+  // ------------------------------------ CHANGES PLAYER ONES SECTION --------------------------------- //
+
 
   function updatePlayerOneSection(choice) {
     switch (choice){
@@ -76,29 +92,29 @@ function init(){
     }
   }
 
+  // ------------------------------------ DETERMINES WHO WINS --------------------------------- //
 
 
-
-  function playerClicked(event) {
-    if (isPlaying){
-      isPlaying = false
-      countdown.style.visibility = 'visible'
-      countdown.textContent = 3
-      const timer = setInterval(updateCountdown, 1000)
-
-      updatePlayerOneSection(event.target.id)
-
-      updatePlayerTwoSection()
-
-      setTimeout(battle, 3000)
-
-      setTimeout(() => {
-        clearInterval(timer)
-      },4000)
+  function battle(){
+    winnerText.style.visibility = 'visible'
+    playerOneIcon.style.visibility = 'visible'
+    playerTwoIcon.style.visibility = 'visible'
+    if (playerOneChoice === playerTwoChoice){
+      winnerText.innerHTML = 'TIE GAME'
+      body.style.backgroundColor = 'rgb(223, 216, 124)'
+    } else if ((playerOneChoice === 1 && playerTwoChoice === 2) || (playerOneChoice === 2 && playerTwoChoice === 3) || (playerOneChoice === 3 && playerTwoChoice === 2)) {
+      winnerText.innerHTML = 'PLAYER TWO WINS'
+      body.style.backgroundColor = 'rgb(192, 141, 141)'
+    } else {
+      winnerText.innerHTML = 'PLAYER ONE WINS'
+      body.style.backgroundColor = 'rgb(139, 221, 136)'
     }
-   
+    reset.style.visibility = 'visible'
   }
 
+
+
+  // ------------------------------------ RESET EVERYTHING --------------------------------- //
 
   function resetEverything() {
     countdown.style.visibility = 'hidden'
@@ -110,6 +126,7 @@ function init(){
     body.style.backgroundColor = 'beige'
   }
 
+  // ------------------------------------ ASSIGNS EVENTLISTENERS TO ICONS --------------------------------- //
 
 
   playerChoice.forEach(button => {
