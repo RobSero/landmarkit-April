@@ -32,7 +32,7 @@ margin-right: 40px;
 }
 
 .rock {
-  background-image: url('https://lh3.googleusercontent.com/proxy/jcuG2cVq09ad8GVOKwpfc_6n5Kd4eKh1lrCrUz4mVvc9Nq76kXq68DvyURW3s-sqAoaxjI3HduMMzzJRXLpqxWtOgLrLzYYe3yWMgMNaEpXV_UE1cDBVjHWwGXUXevafKKKF-gjN07Bf0VRAtDvMoeorpadRK_slgT4');
+  background-image: url('http://www.rockyespy.com/Code%20and%20Functions/Game%20-%20Rock%20Paper%20Scissors/images/rock.png');
 }
 
 .paper {
@@ -78,6 +78,7 @@ margin-right: 40px;
 
 .playerOneSide, .playerTwoSide {
   visibility: hidden;
+  height: 250px;
 }
 
 .winner-section {

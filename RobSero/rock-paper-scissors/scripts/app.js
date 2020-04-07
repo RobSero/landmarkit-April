@@ -63,7 +63,7 @@ function init(){
         break
       case 2:
         playerTwoChoice = 2
-        playerTwoIcon.style.backgroundImage = 'url(https://lh3.googleusercontent.com/proxy/5ZoYBjMOfSHXYFBCiaeyupKGB5b5L8i1ccuFlynBc7JXuNVGtGKvqkJ6R1t-Fhez7VZLK5U-AMGZK36xKsUZXSQSKdLkjV0SvckeXE0YyQ)'
+        playerTwoIcon.style.backgroundImage = 'url(https://ichef.bbci.co.uk/news/660/cpsprodpb/10433/production/_106111666_gettyimages-157681994.jpg)'
         break
       case 3:
         playerTwoChoice = 3
@@ -83,7 +83,7 @@ function init(){
         break
       case 'paper':
         playerOneChoice = 2
-        playerOneIcon.style.backgroundImage = 'url(https://lh3.googleusercontent.com/proxy/5ZoYBjMOfSHXYFBCiaeyupKGB5b5L8i1ccuFlynBc7JXuNVGtGKvqkJ6R1t-Fhez7VZLK5U-AMGZK36xKsUZXSQSKdLkjV0SvckeXE0YyQ)'
+        playerOneIcon.style.backgroundImage = 'url(https://ichef.bbci.co.uk/news/660/cpsprodpb/10433/production/_106111666_gettyimages-157681994.jpg)'
         break
       case 'scissors':
         playerOneChoice = 3
