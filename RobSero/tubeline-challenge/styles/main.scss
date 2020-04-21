@@ -1,0 +1,76 @@
+$backgroundCol: rgb(103, 103, 148);
+$goodService: rgb(15, 150, 15);
+$warningService: rgba(212, 139, 28, 0.979);
+$badService: rgb(255, 7, 7);
+
+body {
+  background-image: url('./tubemap.jpg');
+  background-size: contain;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  background-color: $backgroundCol;
+  width: 40%;
+  margin: 50px auto;
+  padding: 5px;
+  border-radius: 15px;
+
+  h1 {
+    color: white;
+    margin: 10px;
+    margin-left: 40px;
+  }
+
+  ;
+}
+
+ul {
+  background-color: white;
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 15px;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+    border: 1px solid grey;
+
+    h4 {
+      margin: 5px;
+      font-weight: 300;
+    };
+
+    p {
+      margin: 5px;
+      font-size: 12px;
+    };
+    .description {
+      color: rgb(133, 132, 132);
+      &:hover {
+        color: black;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+
+
+ul {
+  .goodService {
+    color: $goodService
+  }
+
+  ;
+
+  .warningService {
+    color: $warningService
+  }
+
+  ;
+
+  .badService {
+    color: $badService
+  }
+}
