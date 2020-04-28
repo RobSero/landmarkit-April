@@ -8,6 +8,13 @@ function Navbar() {
         <div className="navbar-menu">
           <Link className='navbar-item' to='/'>Home</Link>
           <Link className='navbar-item' to='/wines'>WineList</Link>
+          <Link className='navbar-item' to='/wines/new'>New Wines</Link>
+        </div>
+        <div className="navbar-end">
+          <div className='navbar-item buttons'>
+            <Link className='navbar-item button is-primary' to='/register'>Register</Link>
+            <Link className='navbar-item button is-primary' to='/login'>Log In</Link>
+          </div>
         </div>
       </nav>
     </div>

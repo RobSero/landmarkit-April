@@ -1,27 +1,30 @@
 import React from 'react'
 
 import { Link } from 'react-router-dom'
-import { getOneWine } from '../../lib/api'
+import { getOneWine, deleteWine } from '../../lib/api'
 
 class WineShow extends React.Component {
   state = {
     wineInfo: null
   }
 
+  wineId = this.props.match.params.id
 
   async componentDidMount() {
     try {
-      // console.log(this.props.match.params.id)
-      const wineId = this.props.match.params.id
-      const wineInfo = await getOneWine(wineId)
+      // console.log(this.props.match.params.id) 
+      const wineInfo = await getOneWine(this.wineId)
       // console.log(wineInfo.data)
       this.setState({ wineInfo: wineInfo.data })
     } catch (err) {
       console.log(err)
       
     }
-    
-    
+  }
+
+  handleDelete = async () => {
+    await deleteWine(this.wineId)
+    this.props.history.push('/wines')
   }
 
   render(){
@@ -47,6 +50,14 @@ class WineShow extends React.Component {
         <h2 className="subtitle">
         only £{wineInfo.price}
         </h2>
+        <Link to={`/wines/${this.wineId}/edit`}>
+          <span className="icon has-text-info">
+            <i className="fas fa-info-circle"></i>
+          </span>
+        </Link>
+        <span className="icon has-text-danger" onClick ={this.handleDelete}>
+          <i className="fas fa-ban"></i>
+        </span>
            
 
         <div className='columns'>
@@ -88,7 +99,7 @@ class WineShow extends React.Component {
           </div>
           <div className="message-body">
             <p>{wineInfo.grape} Grapes are used to give a smooth aftertaste</p>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
           </div>
         </article>
       </div>
