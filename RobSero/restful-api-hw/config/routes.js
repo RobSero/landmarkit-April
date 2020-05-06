@@ -2,6 +2,7 @@
 
 const router = require('express').Router()
 const buildings = require('../controllers/buildingControl')
+const auth = require('../controllers/auth')
 
 router.route('/buildings')
   .get(buildings.getAll)
@@ -10,6 +11,11 @@ router.route('/buildings')
 router.route('/buildings/:id')
   .get(buildings.show)
   .delete(buildings.delete)
+  .put(buildings.update)
+
+router.route('/register')
+  .post(auth.register)
+  // .put(auth.update)
 
 
 module.exports = router

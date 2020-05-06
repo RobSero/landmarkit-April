@@ -25,6 +25,9 @@ async function createBuilding(req,res){
 async function showBuilding(req,res){
   try {
     const oneBuilding = await Buildings.findById(req.params.id)
+    if (!oneBuilding) {
+      throw new Error()
+    }
     res.status(200).json(oneBuilding)
   } catch (err) {
     res.status(422).json(err)
@@ -40,11 +43,23 @@ async function deleteBuilding(req,res){
   }
 }
 
+async function updateBuilding(req,res){
+  try {
+    const building = await Buildings.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
+    res.status(202).json(building)
+  } catch (err){
+    res.status(422).json(err)
+  }
+  
+}
+
+
 
 module.exports = {
   getAll: getAllBuildings,
   create: createBuilding,
   show: showBuilding,
-  delete: deleteBuilding
+  delete: deleteBuilding,
+  update: updateBuilding
 }
 // * export your controllers for use in the router
