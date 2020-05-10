@@ -1,0 +1,57 @@
+
+.red {
+  background-color: red;
+  
+}
+
+.colorGrey {
+  background-color: rgb(230, 230, 230);
+}
+
+.center {
+  text-align: center
+}
+
+.circular {
+  border-radius: 50%;
+}
+
+.show-image {
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 400px
+}
+
+.noDeco {
+  text-decoration: none;
+}
+
+
+.low-padding {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.mini-nav-bar {
+  min-height: 10px;
+  max-height: 30px;
+  padding: 0
+}
+
+.hero-background {
+  background: linear-gradient( rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.74) ), url('http://cdn.wallpapername.com/3840x2160/20180512/5af6b1d906280.jpg');
+  background-position:center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer {
+  max-height: 25px;
+  margin: 0;
+}
+
+.main-title {
+  margin: 0;
+  padding: 0;
+  min-height: 1em;
+}
