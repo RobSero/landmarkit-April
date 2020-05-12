@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {isAuthenticated} from '../../lib/authRequests'
 
 function BuildingCard(props) {
 
@@ -8,7 +9,7 @@ function BuildingCard(props) {
     <article className="media mt-4">
       <figure className="media-left">
         <p className="image is-64x64">
-          <img src={props.image} />
+          <img src={props.image} alt={props.name} />
         </p>
       </figure>
       <div className="media-content">
@@ -23,12 +24,10 @@ function BuildingCard(props) {
         </div>
       </div>
       <div className="media-right">
-        <button className="delete"></button>
+        {isAuthenticated() && <button className="delete"></button>}
       </div>
     </article>
   )
-
-
 }
 
 

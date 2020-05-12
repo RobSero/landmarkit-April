@@ -29,7 +29,8 @@ mongoose.connect(mongooseURL, { useUnifiedTopology: true, useNewUrlParser: true 
             country: 'UK',
             age: 213,
             visitorsPerYear: 1466,
-            image: 'https://upload.wikimedia.org/wikipedia/commons/1/10/Empire_State_Building_%28aerial_view%29.jpg'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/1/10/Empire_State_Building_%28aerial_view%29.jpg',
+            user: user._id
           })
         }
         console.log('buildings created')

@@ -7,11 +7,10 @@ import Register from './components/user/Register'
 import Home from './components/home/Home'
 import BuildingList from './components/index/BuildingList'
 import BuildingShow from './components/index/BuildingShow'
+import BuildingNew from './components/index/BuildingNew'
 import Wishlist from './components/wishlist/Wishlist'
 
-class App extends React.Component {
-
-  render() {
+const App = () => {
     return(
       <BrowserRouter>
       <Navbar />
@@ -19,6 +18,7 @@ class App extends React.Component {
           <Route exact path='/' component={Home} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
+          <Route exact path='/buildings/new' component={BuildingNew} />
           <Route exact path='/buildings/:id' component={BuildingShow} />
           <Route exact path='/buildings' component={BuildingList} />
           <Route exact path='/wishlist' component={Wishlist} />
@@ -26,7 +26,7 @@ class App extends React.Component {
         <Footer />
       </BrowserRouter>
     )
-  }
+  
 }
 export default App
 

@@ -1,5 +1,7 @@
 import React from 'react'
-import { getOneBuilding } from '../../lib/axiosRequests'
+import { getOneBuilding, deleteBuilding } from '../../lib/axiosRequests'
+import {isUser} from '../../lib/authRequests'
+import BuildingComment from './BuildingComment'
 
 
 class BuildingShow extends React.Component {
@@ -15,21 +17,26 @@ class BuildingShow extends React.Component {
     this.setState({
       buildingInfo: building.data
     })
+    console.log(isUser(building.data.user._id));
+    
   }
 
-  // mainImageStyling = {
-  //   backgroundImage: `url(${this.state.buildingInfo.image})`,
-  //   backgroundSize: 'cover',
-  //   borderRadius: '50%',
-  //   height: 400,
-  //   width: 400,
-  // }
+  handleDelete = async() => {
+    try{
+      await deleteBuilding(this.buildingId)
+      this.props.history.push('/buildings')
+    } catch(err) {
+      console.log(err)
+    }
+    
+  }
+
 
 
 
   render() {
     const building = this.state.buildingInfo
-    if (this.state.buildingInfo === null) {
+    if (building === null) {
       return <h1> Oops, we could not find that building!</h1>
     }
     return (
@@ -38,7 +45,7 @@ class BuildingShow extends React.Component {
           <div className='column is-half'>
             <div className='columns is-multiline'>
               <div className='column is-half is-offset-one-quarter'>
-                <img className='show-image' src={building.image} alt={`image of ${building.name}`} />
+                <img className='show-image' src={building.image} alt={building.name} />
               </div>
               <div className='column is-half is-offset-one-quarter center red'>
                 <h3>Section To be implemented: Google Maps Show location</h3>
@@ -56,6 +63,8 @@ class BuildingShow extends React.Component {
               <div className='columns'>
                 <div className='column is-half'>
                   <p className='is-size-7 mb-2'>Building Age: {building.age} years </p>
+                  {isUser(building.user._id) && <button className="noDeco button is-light mr-2">Edit</button>}
+                  {isUser(building.user._id) && <button className="noDeco button is-danger mr-2" onClick={this.handleDelete}>Delete</button>}
                 </div>
                 <div className='column is-half'>
                 <p className='is-size-7 mb-2'>Visitors per Year: {building.visitorsPerYear} </p>
@@ -63,8 +72,11 @@ class BuildingShow extends React.Component {
               </div>
               
               <p className='is-size-5 mt-2'>Comments:</p>
-              <p> // -------  TO BE ADDED ------------ //</p>
-
+              
+              { building.comments.length === 0? <h5 className='center'>Could not find anything, try searching again</h5> : building.comments.map(comment => {
+                    return <BuildingComment key={building._id} {...comment} admin={building.user} />
+                  })
+                }
             </div>
           </div>
         </div>

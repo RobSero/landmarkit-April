@@ -6,7 +6,7 @@ function InfoSection(props) {
       <div className="column">
         <div className="columns">
           <div className="column is-half is-offset-one-quarter">
-            <img src='../../assets/placeholder.png' />
+            <img src='../../assets/placeholder.png' alt='explore' />
             <p className='center'>Check out sweet landmarks from around the world</p>
           </div>
         </div>
@@ -15,7 +15,7 @@ function InfoSection(props) {
       <div className="column">
         <div className="columns">
           <div className="column is-half is-offset-one-quarter">
-            <img src='../../assets/placeholder.png' />
+            <img src='../../assets/placeholder.png' alt='wishlist' />
             <p className='center'>Add them to your wishlist and review them</p>
           </div>
         </div>
@@ -24,7 +24,7 @@ function InfoSection(props) {
       <div className="column">
         <div className="columns">
           <div className="column is-half is-offset-one-quarter">
-            <img src='../../assets/placeholder.png' />
+            <img src='../../assets/placeholder.png' alt='visit' />
             <p className='center'>Explore them and mark it down!</p>
           </div>
         </div>

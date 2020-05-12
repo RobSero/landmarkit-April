@@ -10,6 +10,14 @@ const UserSchema = new mongoose.Schema({
 })
 
 
+// Restrict info to be sent when populated ie. dont send password and email
+
+UserSchema.set('toJSON', { transform(doc,json){
+  delete json.password
+  delete json.email
+  return json
+} } )
+
 // setup virtual field of pw confirmation
 
 UserSchema
@@ -47,4 +55,4 @@ UserSchema.methods.validatePassword = function(password){
 }
 
 
-module.exports = mongoose.model('user', UserSchema)
+module.exports = mongoose.model('User', UserSchema)

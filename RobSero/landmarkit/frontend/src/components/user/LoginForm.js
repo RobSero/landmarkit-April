@@ -4,46 +4,44 @@ import React from 'react'
 
 function LoginForm(props){
 
-
-
   return (
     <div className='columns'>
 <div className='column is-three-fifths is-offset-one-fifth'>
-      <form>
-      <div class="field">
-        <label class="label">Username</label>
-        <div class="control has-icons-left has-icons-right">
-          <input class="input is-success" type="text" placeholder="Username" name='username' value="" />
-          <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
+      <form onSubmit={props.handleSubmit}>
+      <div className="field">
+        <label className="label">Username</label>
+        <div className="control has-icons-left has-icons-right">
+        <input className="input is-success" type="text" placeholder="Username" name='username' value={props.username} onChange={props.handleChange} />
+          <span className="icon is-small is-left">
+            <i className="fas fa-user"></i>
           </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
+          <span className="icon is-small is-right">
+            <i className="fas fa-check"></i>
           </span>
         </div>
-        <p class="help is-success">This username is available</p>
+        <p className="help is-success">This username is available</p>
       </div>
 
-      <div class="field">
-        <label class="label">Password</label>
-        <div class="control has-icons-left has-icons-right">
-          <input class="input is-danger" type="password" placeholder="Password" name='password' value="" />
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
+      <div className="field">
+        <label className="label">Password</label>
+        <div className="control has-icons-left has-icons-right">
+        <input className="input is-danger" type="password" placeholder="Password" name='password' value={props.password} onChange={props.handleChange} />
+          <span className="icon is-small is-left">
+            <i className="fas fa-envelope"></i>
           </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-exclamation-triangle"></i>
+          <span className="icon is-small is-right">
+            <i className="fas fa-exclamation-triangle"></i>
           </span>
         </div>
-        <p class="help is-danger">This email is invalid</p>
+        <p className="help is-danger">This email is invalid</p>
       </div>
 
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-dark" type='submit'>Submit</button>
+      <div className="field is-grouped">
+        <div className="control">
+          <button className="button is-dark" type='submit'>Submit</button>
         </div>
-        <div class="control">
-          <a href='/' class="button is-light">Cancel</a>
+        <div className="control">
+          <a href='/' className="button is-light">Cancel</a>
         </div>
       </div>
       </form>

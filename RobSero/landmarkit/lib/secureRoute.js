@@ -12,12 +12,13 @@ async function secureRoute(req,res,next){
     }
     const token = req.headers.authorization.replace('Bearer ', '')
     const payload = await jwt.verify(token,secret)
-    console.log(payload)
     
     const user = await User.findById(payload.sub)
     if (!user) {
       throw new Error()
     }
+
+    req.currentUser = user
     next()
 
   } catch (err){

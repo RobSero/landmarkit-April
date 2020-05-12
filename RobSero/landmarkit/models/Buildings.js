@@ -1,5 +1,12 @@
 const mongoose = require('mongoose')
 
+const commentSchema = new mongoose.Schema({
+  content: { type: String, required: true },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+}, {
+  timestamps: true
+})
+
 
 const BuildingSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
@@ -7,7 +14,9 @@ const BuildingSchema = new mongoose.Schema({
   country: { type: String, required: true },
   age: { type: Number },
   visitorsPerYear: { type: Number },
-  image: { type: String, required: true }
+  image: { type: String, required: true },
+  comments: [commentSchema],
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 }, {
   timestamps: true
 })
