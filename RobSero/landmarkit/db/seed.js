@@ -17,7 +17,8 @@ mongoose.connect(mongooseURL, { useUnifiedTopology: true, useNewUrlParser: true 
           username: 'robbo',
           email: 'rob@rob.com' ,
           password: 'pass',
-          passwordConfirmation: 'pass'
+          passwordConfirmation: 'pass',
+          image: 'http://res.cloudinary.com/dy7eycl8m/image/upload/v1589367642/my_images/xnxneoevcdhepxdc0blh.png'
         })
         console.log(user)
         

@@ -4,6 +4,9 @@ const jwt = require('jsonwebtoken')
 
 
 async function register(req,res){
+  if (!req.body.image){
+    req.body.image = 'http://res.cloudinary.com/dy7eycl8m/image/upload/v1589367642/my_images/xnxneoevcdhepxdc0blh.png'
+  }
   try {
     await User.create(req.body)
     res.status(201).json({ message: `Thanks for signing up ${req.body.username}!` })

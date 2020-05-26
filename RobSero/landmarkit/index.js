@@ -5,6 +5,7 @@ const port = 8000
 const mongooseURL = 'mongodb://localhost:27017/landmarkDB'
 const logs = require('./lib/logs')
 const routes = require('./routers/routes')
+const errorHandling = require('./lib/errorHandler')
 
 const app = express( )
 
@@ -22,7 +23,7 @@ app.use(bodyParser.json())
 app.use(logs)
 app.use('/api', routes)
 
-
+app.use(errorHandling)
 
 
 // ----- Middleware end

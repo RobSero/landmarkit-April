@@ -5,84 +5,84 @@ const Building = require('../models/Buildings')
 
 // ------------------------------ GET BUILDINGS SECTION -------------------------------------
 
-async function getAllbuildings(req,res){
+async function getAllbuildings(req,res,next){
   try {
     const allBuildings = await Building.find().populate('user').populate('comments.user')
     res.status(200).json(allBuildings)
   } catch (err) {
-    res.status(500).json(err)
+    next(err)
   }
 }
 
-async function getOnebuilding(req,res){
+async function getOnebuilding(req,res,next){
   try {
     const oneBuilding = await Building.findById(req.params.id).populate('user').populate('comments.user')
     if (!oneBuilding) {
-      throw new Error()
+      throw new Error('Building not found')
     }
     res.status(200).json(oneBuilding)
   } catch (err){
-    res.status(404).json('building not found')
+    next(err)
   }
 }
 
 // ------------------------------ CREATE SECTION -------------------------------------
 
-async function createBuilding(req,res){
+async function createBuilding(req,res,next){
   req.body.user = req.currentUser
   try {
     const newBuilding = await Building.create(req.body)
     res.status(201).json(newBuilding)
   } catch (err){
-    res.status(422).json(err)
+    next(err)
   }
 }
 
 // ------------------------------ UPDATE SECTION -------------------------------------
 
-async function updateBuilding(req,res){
+async function updateBuilding(req,res,next){
   try {
     const singleBuilding = await Building.findById(req.params.id)
     if (!singleBuilding) {
-      throw new Error('Could not find building')
+      throw new Error('Building not found')
     }
     if (!singleBuilding.user.equals(req.currentUser._id)){
-      throw new Error('Not eligable to update this building')
+      throw new Error('Not authorized to do this')
     }
     Object.assign(singleBuilding, req.body)
     await singleBuilding.save()
     res.status(202).json(singleBuilding)
   } catch (err){
-    res.status(422).json(err.message)
+    next(err)
   }
 }
 
 // ------------------------------ DELETE SECTION -------------------------------------
 
-async function deleteBuilding(req,res){
+async function deleteBuilding(req,res,next){
   try {
     const singleBuilding = await Building.findById(req.params.id)
     if (!singleBuilding) {
-      throw new Error('Could not find building')
+      throw new Error('Building not found')
     }
     if (!singleBuilding.user.equals(req.currentUser._id)){
-      throw new Error('Not eligable to delete this building')
+      throw new Error('Not authorized to do this')
     }
     await singleBuilding.remove()
     res.status(201).json('deleted successfully')
   } catch (err){
-    res.status(422).json(err.message)
+    next(err)
   }
 }
 
 
 // ------------------------------ COMMENTS SECTION -------------------------------------
 
-async function addComment(req,res){
+async function addComment(req,res,next){
   try {
     const singleBuilding = await Building.findById(req.params.id)
     if (!singleBuilding) {
-      throw new Error('Could not find building')
+      throw new Error('Building not found')
     }
     console.log(req.currentUser)
     
@@ -91,11 +91,11 @@ async function addComment(req,res){
     await singleBuilding.save()
     res.status(201).json('comment added successfully')
   } catch (err){
-    res.status(422).json(err.message)
+    next(err)
   }
 }
 
-async function removeComment(req,res){
+async function removeComment(req,res,next){
   try {
     const singleBuilding = await Building.findById(req.params.id)
     if (!singleBuilding) {
@@ -105,15 +105,21 @@ async function removeComment(req,res){
     if (!commentToRemove) {
       throw new Error('comment could not be found, this may already be removed!')
     }
+    // console.log(req.currentUser)
+    // console.log(commentToRemove)
+    // console.log(singleBuilding)
 
-    if (!commentToRemove.user.equals(req.currentUser._id)){
-      throw new Error('You are not authorized to delete this comment')
+    if (commentToRemove.user.equals(req.currentUser._id) || singleBuilding.user.equals(req.currentUser._id) ){
+      await commentToRemove.remove()
+      await singleBuilding.save()
+      res.status(201).json('comment removed successfully')
+    } else {
+      throw new Error('Not authorized to do this')
     }
-    await commentToRemove.remove()
-    await singleBuilding.save()
-    res.status(201).json('comment removed successfully')
+    // console.log(!singleBuilding.user.equals(req.currentUser._id))
+    // console.log(!commentToRemove.user.equals(req.currentUser._id))
   } catch (err){
-    res.status(422).json(err.message)
+    next(err)
   }
 }
 

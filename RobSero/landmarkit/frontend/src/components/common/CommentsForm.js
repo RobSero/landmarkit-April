@@ -1,9 +1,6 @@
 import React from 'react'
-import ImageUpload from '../../lib/ImageUpload'
 
-
-
-function BuildingForm(props) {
+function CommentsForm(props) {
 
   return (
     <div className='columns'>
@@ -12,7 +9,7 @@ function BuildingForm(props) {
           <div className="field">
             <label className="label">Landmark Name</label>
             <div className="control has-icons-left has-icons-right">
-              <input className="input is-success" type="text" placeholder="Name" name='name' value={props.name} onChange={props.handleChange} />
+              <input className="input is-success" type="textarea" placeholder="Write your thoughts.." name='content' value={props.value} onChange={props.handleInput} />
               <span className="icon is-small is-left">
                 <i className="fas fa-user"></i>
               </span>
@@ -38,4 +35,4 @@ function BuildingForm(props) {
   )
 }
 
-export default BuildingForm
+export default CommentsForm

@@ -4,26 +4,24 @@ const secret = 'Test secret'
 
 
 //get payoad from the webtoken to find id
-
 async function secureRoute(req,res,next){
   try {
     if (!req.headers.authorization) {
-      throw new Error()
+      throw new Error('Not authorized to do this')
     }
     const token = req.headers.authorization.replace('Bearer ', '')
     const payload = await jwt.verify(token,secret)
     
     const user = await User.findById(payload.sub)
     if (!user) {
-      throw new Error()
+      throw new Error('Not authorized to do this')
     }
 
     req.currentUser = user
     next()
-
   } catch (err){
     // console.log(err)
-    res.status(422).json('UNAUTHORIZED, SIGN IN FIRST')
+    next(err)
   }
 }
 

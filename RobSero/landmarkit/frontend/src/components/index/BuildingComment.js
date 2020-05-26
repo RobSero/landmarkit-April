@@ -24,7 +24,7 @@ function BuildingComment(props) {
         </div>
       </div>
       <div className="media-right">
-        {(isUser(props.admin._id) || isUser(props.user._id)) && <button className="delete"></button>}
+        {(isUser(props.admin._id) || isUser(props.user._id)) && <button className="delete" onClick={()=>{props.handleCommentDelete(props._id)}}></button>}
       </div>
     </article>
   )

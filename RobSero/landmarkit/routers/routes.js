@@ -5,6 +5,7 @@ const secureRoute = require('../lib/secureRoute')
 
 
 
+
 // ------------- Buildings routes ------------------
 router.route('/buildings')
   .get(buildings.get)
