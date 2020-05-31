@@ -37,7 +37,7 @@ def palindrome_check(string):
     if no_spaces == flipped:
          return True
     return False
-    
+
     
 # write a function that returns the letters of a word or phrase in alphabetical order case insensitive
 # eg. order_string_alphabetically('javascript is cool') => 'aacciijlooprsstv'
@@ -67,7 +67,7 @@ def num_of_vowels(string):
 # eg: frame('Hello Kitty') => * Hello Kitty *
 #                             ***************
 def frame(string):
-    astricks_row = ''.join(['*' for letter in string] + ['*', '*','*','*'])
+    astricks_row = ''.join(['*' for letter in string] + ['*','*','*','*'])
   
     return f'''
     {astricks_row}
