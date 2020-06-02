@@ -1,0 +1,6 @@
+{
+  "python.pythonPath": "/Users/robserowka/.local/share/virtualenvs/django-api-2iU3CcbD/bin/python",
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "python.linting.pylamaEnabled": false
+}
